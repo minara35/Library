@@ -1,7 +1,7 @@
 Feature: Library order placing feature
   Agile Story: When user is on the "Users" page, user should be able to filter all ACTIVE and INACTIVE users info
 
-
+  @lib
   Scenario Outline: Scenario Outline: User should be able to filter all users info
     Given User is logged into  Library account and on User page
     And User selects "<userGroup>" from User Group dropdown
@@ -12,9 +12,9 @@ Feature: Library order placing feature
 
       | userGroup | status | expectedNames |
 
-      |ALL | ACTIVE | ACTIVE        |
+      |Students | ACTIVE | ACTIVE        |
 
-  @lib
+
   Scenario Outline: Scenario Outline: User should be able to filter all users info in search box
     Given User is logged into  Library account and on User page
     And User enters "<nameOrLastName>" to search input box

@@ -53,8 +53,9 @@ public class LibararyStepDeginitions {
 
 
     @And("User enters {string} to search input box")
-    public void userEntersToSearchInputBox(String enterName) {
+    public void userEntersToSearchInputBox(String enterName) throws InterruptedException {
             libraryUsersPage.searchBox.sendKeys(enterName);
+            Thread.sleep(6000);
 
 
 
@@ -64,6 +65,7 @@ public class LibararyStepDeginitions {
     @Then("User verifies {string} in the table")
     public void userVerifiesInTheTable(String givenName) {
         String actualName = libraryUsersPage.fullName.getText();
+        System.out.println("actualName = " + actualName);
         Assert.assertTrue("Names are not matching!!!", actualName.equalsIgnoreCase(givenName));
 
 
